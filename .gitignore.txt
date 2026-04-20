@@ -1,2 +1,150 @@
-#.exe
-#.obj
+# Creado por https://www.toptal.com/developers/gitignore/api/c,windows,objective-c
+# Editar en https://www.toptal.com/developers/gitignore?templates=c,windows,objective-c
+
+### C ###
+# Requisitos previos
+*.d
+
+# Archivos objeto
+*.o
+*.ko
+*.obj
+*.duende
+
+# Salida del enlazador
+*.seda
+*.mapa
+*.exp
+
+# Encabezados precompilados
+*.gch
+*.pch
+
+# Bibliotecas
+*.lib
+*.a
+*.la
+*.lo
+
+# Objetos compartidos (incluidas las DLL de Windows)
+*.dll
+*.entonces
+*.entonces.*
+*.dylib
+
+# Archivos ejecutables
+*.exe
+*.afuera
+*.app
+*.i*86
+*.x86_64
+*.maleficio
+
+# Archivos de depuración
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Resultados de la compilación del módulo del kernel
+*.mod*
+*.cmd
+.tmp_versions/
+módulos.orden
+Módulo.symvers
+Archivo Mkfile.old
+dkms.conf
+
+### Objective-C ###
+# Xcode
+#
+# Colaboradores de gitignore: recuerden actualizar Global/Xcode.gitignore, Objective-C.gitignore y Swift.gitignore
+
+## Configuración de usuario
+xcuserdata/
+
+## Compatibilidad con Xcode 8 y versiones anteriores (ignorando no es necesario a partir de Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## Compatibilidad con Xcode 3 y versiones anteriores (ignorando no es necesario a partir de Xcode 4)
+construir/
+Datos derivados/
+*.movido-aparte
+*.pbxuser
+!usuario.pbxpredeterminado
+*.modo1v3
+!modo predeterminado1v3
+*.mode2v3
+!modo predeterminado2v3
+*.perspectivav3
+!default.perspectivev3
+
+## Específico de Obj-C/Swift
+*.hmap
+
+## Empaquetado de la aplicación
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+#CápsulasDeCoco
+# Recomendamos no agregar el directorio Pods a su .gitignore. Sin embargo
+# Debes juzgar por ti mismo; las ventajas y desventajas se mencionan en:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+# Cápsulas/
+# Agrega esta línea si quieres evitar incluir el código fuente del espacio de trabajo de Xcode.
+# *.xcworkspace
+
+# Cartago
+# Agrega esta línea si quieres evitar incluir el código fuente de las dependencias de Carthage.
+# Cartago/Cajas
+
+Cartago/Construir/
+
+#carrilrápido
+# Se recomienda no almacenar las capturas de pantalla en el repositorio de git.
+# En su lugar, utilice fastlane para regenerar las capturas de pantalla siempre que sean necesarias.
+# Para obtener más información sobre la configuración recomendada, visite:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Vista previa.html
+fastlane/capturas de pantalla/**/*.png
+fastlane/test_output
+
+# Inyección de código
+# Después de instalar las nuevas herramientas de inyección de código, se genera una carpeta /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+Proyecto de inyección de iOS/
+
+### Parche para Objective-C ###
+
+### Windows ###
+# Archivos de caché de miniaturas de Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Archivo de volcado
+*.stackdump
+
+# Archivo de configuración de la carpeta
+[Dd]esktop.ini
+
+# Papelera de reciclaje utilizada en recursos compartidos de archivos
+$RECICLAJE.CONTENEDOR/
+
+# Archivos del instalador de Windows
+*.taxi
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Accesos directos de Windows
+*.lnk
+
+# Fin de https://www.toptal.com/developers/gitignore/api/c,windows,objective-c
