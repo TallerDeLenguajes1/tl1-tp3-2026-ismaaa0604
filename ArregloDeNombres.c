@@ -7,6 +7,7 @@ int BuscarNombrePorPalabra(char *ArreglodeNombres[5], char *palabra);
 int main(){
     char *ArregloDeNombres[5];
     char buff[100], palabra[50];
+    int ID, opcion;
     for(int i = 0;i<5;i++){
         printf("Ingrese el nombre: \n");
         gets(buff);
@@ -15,15 +16,23 @@ int main(){
         strcpy(ArregloDeNombres[i],buff);
     }
     MostrarPersonas(ArregloDeNombres);
-    BuscarNombrePorId(ArregloDeNombres, 0);
-    printf("Ingrese la palabra clave: \n");
-    gets(palabra);
-    int encontrada = BuscarNombrePorPalabra(ArregloDeNombres,palabra);
-    if(encontrada != -1){
-        printf("%s", ArregloDeNombres[encontrada]);
+    printf("Ingrese la Opcion 1(1) si quiere buscar por ID el nombre o ingrese la Opcion 2(2) si quiere buscar por palabra clave: \n");
+    scanf("%d", opcion);
+    if(opcion == 1){
+        printf("Ingrese el ID: \n");
+        scanf("%d", ID);
+        BuscarNombrePorId(ArregloDeNombres, 0);
     }
     else{
-        printf("No se encontro coincidencias \n");
+        printf("Ingrese la palabra clave: \n");
+        gets(palabra);
+        int encontrada = BuscarNombrePorPalabra(ArregloDeNombres,palabra);
+        if(encontrada != -1){
+            printf("%s", ArregloDeNombres[encontrada]);
+        }
+        else{
+            printf("No se encontro coincidencias \n");
+        }
     }
     for(int i=0; i<5; i++){
         free(ArregloDeNombres[i]);
