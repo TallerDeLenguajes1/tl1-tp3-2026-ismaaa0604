@@ -16,19 +16,19 @@ struct Cliente {
 };
 float costoTotal(struct Producto prod);
 int main(){
-    int cantidad;
+    int cantidadDeseada;
     char nombre[100];
     char *TiposProductos[]={"Galletas","Snack","Cigarrillos","Caramelos","Bebidas"};
     srand(time(NULL));
-    printf("Ingrese la cantidad de clientes(hasta 5): \n");
-    scanf("%d", &cantidad);
-    struct Cliente * cliente = malloc(sizeof(struct Cliente)* cantidad);
-    for (int i = 0; i< cantidad; i++){
+    printf("¿que cantidad de nombres vas a usar?: \n");
+    scanf("%d", &cantidadDeseada);
+    struct Cliente * cliente = malloc(sizeof(struct Cliente)* cantidadDeseada);
+    for (int i = 0; i< cantidadDeseada; i++){
         cliente[i].ClienteID = i;
         printf("Ingrese el nombre: \n");
         fgets(nombre, sizeof(nombre), stdin);
         nombre[strcspn(nombre, "\n")] = '\0';
-        int cantidadDeCaracteres = strlen(nombre);
+        int cantidadDeCaracteres = strlen(nombre) + 1;
         cliente[i].NombreCliente = (char *)malloc(sizeof(char) * (cantidadDeCaracteres+1));
         strcpy(cliente[i].NombreCliente,nombre);
         cliente[i].CantidadProductosAPedir = 1 + rand()%(5-1+1);
@@ -43,7 +43,7 @@ int main(){
            //printf("El costo total de este producto es: %f \n", costoT); 
         }
     }
-    for (int i = 0; i < cantidad; i++){
+    for (int i = 0; i < cantidadDeseada; i++){
         float totalApagar = 0;
         printf("El ID del cliente es: %d \n", cliente[i].ClienteID);
         printf("El nombre del cliente es: %s \n",cliente[i].NombreCliente);
@@ -58,6 +58,11 @@ int main(){
         }
         printf("El costo total a pagar del cliente %d es: %f \n",i,totalApagar);
     }
+    for (int i = 0; i < cantidadDeseada; i++) {
+        free(cliente[i].NombreCliente); // Liberamos la memoria del nombre
+        free(cliente[i].Productos);     // Liberamos los productos de este cliente
+    }
+    free(cliente);
     return 0;
 }
 float costoTotal(struct Producto prod){
